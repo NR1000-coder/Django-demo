@@ -33,9 +33,12 @@ INSTALLED_APPS = [
     # "django.contrib.staticfiles",              #comment etmek
     "rest_framework",                            #7
     "api",                                       #8
+    "corsheaders",                               #10
 ]
 
 MIDDLEWARE = [
+    "corsheaders.middleware.CorsMiddleware",         #11
+    "django.middleware.common.CommonMiddleware",      #12
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
@@ -44,6 +47,12 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
+
+CORS_ALLOWED_ORIGINS = [                  #13
+    "https://nr1000-coder.github.io",
+]
+
+
 
 ROOT_URLCONF = "core.urls"
 
